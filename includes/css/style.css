@@ -1,0 +1,22 @@
+.promoted-product-render {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 20px;
+    font-family: inherit;
+    margin: 0;
+}
+
+.promoted-product-text {
+    margin-right: 8px;
+    font-size: 20px;
+    line-height: 1.4;
+    font-family: inherit;
+}
+
+.promoted-product-link {
+    font-size: 20px;
+    line-height: 1.4;
+    font-family: inherit;
+    margin: 0;
+}

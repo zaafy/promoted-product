@@ -1,0 +1,25 @@
+/* metaboxes custom fields styles */
+.promoted-product-metabox-wrapper {
+    margin-top: 16px;
+}
+
+.promoted-product-metabox-wrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+}
+
+.promoted-product-metabox-wrapper div.hidden {
+    display: none;
+}
+
+.promoted-product-metabox-wrapper label {
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.promoted-product-metabox-wrapper input {
+    display: inline-block;
+    margin: 0;
+}
