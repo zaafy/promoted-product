@@ -115,6 +115,7 @@ class Metaboxes {
                     value="<?php echo isset($postmeta['_'.$this->fields[0]]) && $postmeta['_'.$this->fields[3]][0] ? $postmeta['_'.$this->fields[3]][0] : $time ?>"
                 />
             </div>
+            <?php wp_nonce_field('save_metadata_promoted-' . $post->ID, 'save_metadata_promoted'); // set up nonce?>
         </div>
         <?php
     }
@@ -122,14 +123,15 @@ class Metaboxes {
     /**
      * Saves data from metaboxes
      *
-     * If user has permission to edit metaboxes data,
-     * it saves it using update_post_meta().
+     * If user has permission to edit metaboxes data and nonce is valid,
+     * save the data using update_post_meta().
      *
      * @param integer $post_id ID of WordPress post to which the data should be saved.
      * @return void
      */
     public function save_metaboxes_data(int $post_id) {
-        if (!current_user_can('edit_post', $post_id)) {
+        // check if user has privileges and verify nonce
+        if (current_user_can('edit_post', $post_id) === false || check_admin_referer( 'save_metadata_promoted-' . $post_id, 'save_metadata_promoted') === false) {
             return;
         }
 
